@@ -1,0 +1,146 @@
+/*
+Theme name: Theme site ludus 1c
+Theme URI: Ludus1C.com
+Autor: maxime bazin
+Description: theme css site web fpc
+version: 1.0
+License: Ludus1c
+License URI: Ludus1c.com
+text Domain: ludus1c
+*/
+
+body{
+
+	
+	background: url("images/titre.jpg")fixed no-repeat top left,url("images/titre.jpg")fixed no-repeat top right,url("images/fond6.jpg")fixed;
+}
+
+
+ul{
+	display: flex;
+	flex-wrap:  wrap;
+	justify-content:center;
+	
+}
+
+
+a{
+	padding: 20px;
+}
+h1{
+
+	text-align: center;
+	text-shadow: 2px 2px 4px black;
+	border: 3px inset;
+	border-color: silver;
+	border-radius: 15px;
+	background-image: url("images/fond.jpg");
+	
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	
+
+	color: gold;
+}
+h2{
+
+	text-align: center;
+	text-shadow: 2px 2px 4px black;
+	border: 4px inset;
+	border-color: gold;
+	border-radius: 15px;
+	background-image: url("images/fond3.jpg");
+	width: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	
+
+	color: gold;
+}
+
+nav{
+	border: 3px inset;
+	border-color: blue;
+	border-radius: 100px;
+	background-image: url("images/fond2.jpg");
+	
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	height
+	overflow:auto
+}
+
+section{
+	background-image: url("images/fond4.jpg");
+	border: 4px inset;
+	border-color: blue;
+	border-radius: 15px;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+
+
+}
+article{
+	background-image: url("images/fond5.jpg");
+	border: 5px inset;
+	border-color: silver;
+	border-radius: 15px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	height
+	overflow:auto;
+}
+
+footer{
+	border: 3px inset;
+	border-color: blue;
+	border-radius: 100px;
+	background-image: url("images/fond2.jpg");
+	text-align: center;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	height
+	overflow:auto
+}
+
+ul{
+	list-style-type: none;
+}
+
+
+li a:hover{
+
+	color: red;
+}
+
+li a:active{
+
+	color: gold;
+}
+li a{
+
+
+	color: blue;
+}
+.element img{
+	
+	width: auto;
+	height: auto;
+	
+}
+#conteneur{
+	
+
+	display: flex;
+	flex-wrap:  wrap;
+	justify-content: center;
+	align-items: center ;
+	width: 100%;
+
+}

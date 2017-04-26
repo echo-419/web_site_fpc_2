@@ -1,0 +1,169 @@
+<!--Document au format html5-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utl-8" />
+        <title>Cours FPC</title>
+        <link rel="stylesheet" type="text/css" href="style_fpc.css">
+        <link rel="stylesheet" media="screen and (max-width: 1200px)" type="text/css" href="style_fpc_2.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet"> 
+    </head>
+
+    <body>
+
+        <header>
+            <h1 id="titre1">Cours Free Pascal</h1>
+            <div id="conteneur">
+                <div class="element"><img src="images/titre2.jpg"/></div>
+        </header>
+            
+         <h2 class="titre1"> Menu</h2>
+
+        <nav>
+            <ul>
+                <li><a href="#Structure page Pascal">Structure page Pascal</a></li>
+                <li><a href="#Variable">Variable</a></li>
+                <li><a href="#Constantes">Constantes</a></li>
+                <li><a href="#Entrer/Sortie">Entrer/Sortie</a></li>
+                <li><a href="#Sructure/boucle">Sructure/boucle</a></li>
+                <li><a href="#Fonction/procedure">Fonction/procedure</a></li>
+                <li><a href="#Tableau/Types">Tableau/Types</a></li>
+            </ul>
+        </nav> 
+        <p></p>
+        <section>
+            
+                <aside>
+                    <h2 id="Structure page Pascal">Structure page Pascal</h2>
+                </aside>
+                <article>
+                    <p>Le Pascal, cree par <strong>Wirth</strong> au debut des annees 70, possede des instructions assez claires (si vous comprenez l anglais) et favorise une approche methodique et disciplinee (on dit "structuree"). Le Pascal est un langage compile, c est-a-dire qu il faut : Entrer un texte dans l ordinateur (a l aide d un programme appele editeur); Le traduire en langage machine (c est-a-dire en codes binaires comprehensibles par l ordinateur); c est la compilation et eventuellement l edition de liens (Link) et L executer. Contrairement a un Basic interprete, l execution sera beaucoup plus rapide puisqu il n y a plus de traduction a effectuer.</p> 
+                    <p>Un programme Pascal est compose d une entete, des declarations et des instructions (delimitees par <strong>BEGIN et END</strong>):</p>
+                    <p><strong>PROGRAM cercle (input,output); </strong>( entete )</p> 
+                    <p><strong>VAR</strong></p> 
+                      <p> <strong>    perimetre, diametre : REAL;</strong> ( declarations )</p> 
+                    <p><strong>BEGIN</strong></p> 
+                      <p><strong>readln(diametre)</strong>; ( instruction )</p> 
+                      <p><strong>perimetre := 3.141592 * diametre; </strong>( instruction )</p>
+                      <p><strong>writeln(diametre,perimetre) </strong>( instruction )</p> 
+                    <p><strong>END</strong>.</p> 
+                    <p>L entete est composee du mot <strong>PROGRAM</strong>, suivi du nom du programme (cercle), et d indications sur les Entrees/Sorties (ici le clavier et l'ecran).</p> 
+
+
+                </article>
+                 <aside>
+                    <h2 id="Variable">Variable</h2>
+                </aside>
+                <article>
+                    <p>La partie declarative de notre programme est limitee a la declaration de deux variables (mot-clef<strong> VAR</strong>). Une variable est une "case" memoire de l ordinateur, a laquelle on donne ici un nom. Chaque case peut contenir une valeur. On a precise ici que nos deux variables perimetre et diametre contiendraient des reels.</p> 
+                    <p>Les types simples connus en Pascal sont : </p>
+                    <p><strong>REAL</strong>;</p>
+                    <p><strong>INTEGER</strong> (entier naturel);</p>
+                    <p><strong>CHAR </strong>(contient un est un seul caractere);</p>
+                    <p><strong> BOOLEAN</strong>(booleen, c'est-a-dire qui peut valoir soit TRUE (vrai) soit FALSE (faux).</p>
+                </article>
+                 <aside>
+                    <h2 id="Constantes">Constantes</h2>
+                </aside>
+                <article>
+                    <p>Nous avons deja utilise des variables (on donne un nom a une memoire). Mais on peut egalement utiliser des constantes, qui sont des valeurs qui restent fixes tout au long du programme et pour chaque execution. On declare les constantes avant de declarer les variables, par :<strong> CONST</strong> nom = valeur. Le type de la constante est determine automatiquement par le compilateur (entier si nombre sans point, reel si nombre avec point, caracteres si entre cotes).</p> 
+                </article>
+                 <aside>
+                    <h2 id="Entrer/Sortie">Entrer/Sortie</h2>
+                </aside>
+                <article>
+                    <p>La procedure<strong> WRITELN</strong> permet d afficher des resultats sur l ecran. Les differents arguments sont affiches les uns apres les autres sur la meme ligne. Le curseur est ensuite automatiquement mis en debut de ligne suivante. Pour eviter ceci, on peut utiliser <strong>WRITE</strong>, qui s utilise comme <strong>WRITELN</strong> mais le curseur est laisse derriere le dernier caractere. De meme,<strong> READ</strong> fonctionne comme <strong>READLN</strong>, excepte le curseur qui reste sur la ligne.<strong> WRITE</strong> et<strong> WRITELN</strong> acceptent le "formatage" : on peut imposer le nombre de caracteres utilises pour chaque variable. Soit I entier, R reel :<strong> WRITE(I:5,' ',R:7:2)</strong> ecrira I sur 5 caracteres, et R sur 7 caracteres dont 2 apres la virgule. Si les valeurs sont trop petites pour entrer dans le format, des blancs sont mis devant. Si elles sont trop grandes, le format est ignore. </p> 
+                </article>
+                <aside>
+                    <h2 id="Sructure/boucle">Sructure/boucle</h2>
+                </aside>
+                <article>
+                    <p>Nos connaissances actuelles ne nous permettent pas de faire des programmes utilisant la capacite de l'ordinateur de repeter rapidement et sans erreur beaucoup de calculs.  Chaque structure de controle forme une instruction (qui peut donc etre utilisee dans une autre structure de controle).
+                    </p>
+                    <p><u>Boucle WHILE - DO (tant que - faire)</u></p>
+                    <p>Elle permet de repeter l'instruction tant que l'expression (ou la variable) booleenne est vraie.</p> 
+                    <p>Structure : </p>
+                    <p><strong>WHILE expression booleenne DO instruction</strong></p>
+                    <p><u>Boucle REPEAT - UNTIL (repeter - jusqu'a ce que)</u></p>
+                    <p>Les N instructions sont repetees jusqu'a ce que la condition soit verifiee. Meme si la condition est vraie des le debut, elles sont au moins executees une fois.</p>
+                    <p>Structure :  </p>
+                    <p><strong>REPEAT</strong>  </p>
+                    <p> <strong> instruction 1; </strong> </p>
+                    <p> <strong> instruction 2; </strong> </p>
+                    <p> <strong> ...etc... </strong></p>
+                    <p> <strong>instruction N </strong> </p>
+                    <p><strong>UNTIL condition</strong></p>
+                    <p><u>Boucle FOR - DO (pour - faire)</u></p>
+                    <p>La variable_enumeree (non reelle) prend la valeur_debut, et l'instruction est executee. Puis elle est incrementee (on passe a la suivante, c'est-a-dire que, si elle est entiere, on ajoute 1), et ce jusqu'a valeur_fin (comprise). </p>
+                    <p>Structure : </p>
+                    <p> <strong>FOR variable := valeur_debut TO valeur_fin DO instruction</strong> </p>
+                    <p><u>Instruction IF - THEN - ELSE (si - alors - sinon)</u></p>
+                    <p> Si la condition est vraie, alors on execute l'instruction1 (simple ou composee). Sinon, on passe a la suite (cas 1), ou on execute l'instruction2 (cas 2).</p> 
+                    <p>Remarquez qu'il n'y a pas de ; devant le ELSE. </p>
+                    <p>Structure :  </p>
+                    <p><strong>IF condition THEN instruction1 (* CAS 1 *)</strong> </p>
+                    <p> { ou }  </p>
+                    <p> <strong>IF condition THEN instruction1 ELSE</strong> </p>
+                    <p> <strong>  instruction2 (* CAS 2 *)</strong>  </p>
+                    <p><u>La structure CASE - OF (cas - parmi)</u></p>
+                    <p>Elle evite d'utiliser une trop grande suite de ELSE IF. </p>
+                    <p>L'instruction i sera executee si l'expression appartient a la liste_de_casi. Les autres ne seront pas executees (on passe directement au END). L'expression doit etre de type scalaire (pas de reels). </p>
+                    <p>Structure : </p>
+                    <p><strong>CASE expression OF </strong> </p>
+                    <p>  <strong>liste_de_cas1 : instruction1;</strong> </p>
+                    <p>  <strong>liste_de_cas2 : instruction2;</strong>  </p>
+                    <p>  ..... </p>
+                    <p>  <strong>liste_de_casN : instructionN </strong> </p>                 
+                </article>
+                 <aside>
+                    <h2 id="Fonction/procedure">Fonction/procedure</h2>
+                </aside>
+                <article>
+                    <p>Pour pouvoir utiliser une procedure, il faut d'abord la declarer. La declaration des procedures et fonctions se fait apres toutes les autres declarations.Le programme principal comme les procedures et les fonctions ont toujours cette structure. L'entete est composee d'un mot clef (<strong>PROGRAM, PROCEDURE ou FUNCTION</strong>), suivi de l'identificateur (nom) de la routine, et de la liste des arguments entre parentheses. Les arguments forment la liaison avec l'exterieur de la routine (clavier, ecran et eventuellement fichiers pour le programme). On peut appeler une procedure declaree dans une routine n'importe ou dans cette routine en indiquant simplement son nom comme si c'etait une instruction. A l'appel d'une procedure, le programme interrompt son deroulement normal, execute les instructions de la procedure, puis retourne au programme appelant et execute l'instruction suivante.Une variable est locale pour une procedure X si elle est declaree dans X. Elle n'existe que dans X (et dans les procedures declarees à l'interieur de X). La routine qui comporte la procedure X ne peut donc pas acceder a cette variable locale. 
+                    Une variable est globale pour une procedure X si elle est declaree dans une routine englobant la procedure X. Elle peut etre utilisee dans la procedure. La modifier la modifie egalement dans la routine appelante (englobante). </p>
+                    <p>Tout ce qui a ete dit pour les procedures s'applique egalement aux fonctions. La difference avec une procedure est qu'une fonction renvoie un resultat.</p>
+                </article>
+                 <aside>
+                    <h2 id="Tableau/Types">Tableau/Types</h2>
+                </aside>
+                <article>
+                    <p>On a souvent besoin de regrouper dans une seule variable (et donc un seul nom) plusieurs variables (exemple 3 coordonnees d'un meme vecteur). On utilise pour cela les tableaux. La maniere la plus simple des les definir est : </p>
+                    <p><strong>VAR nom_tableau : ARRAY [type_index] OF type_composantes </strong></p>
+                    <p>Exemple: </p>
+                    <p><strong> CONST dimension = 3;</strong></p> 
+                    <p><strong> VAR vecteur1, vecteur2 : ARRAY [1..dimension] OF REAL;</strong></p>
+                    <p>On peut utiliser le tableau complet (vecteur1 := vecteur2) pour l'affectation uniquement (vecteur1 + vecteur2 est impossible directement). </p>
+                    <p>On peut egalement definir un type tableau, par exemple :</p> 
+                    <p><strong>TYPE </strong></p>
+                    <p><strong>typheures = ARRAY[tj] OF integer;  </strong></p>
+                    <p><strong>VAR</strong></p>
+                    <p><strong>nb_heures_cours : typheures; </strong></p>
+                    
+                </article>
+                <p></p>
+        </section>
+        <p><div id="conteneur">
+                <div class="element"><img src="images/titre3.png"/></div>
+            </div>
+        </p>
+
+        <footer>
+            <ul>
+                <li><a href="#Structure page Pascal">Structure page Pascal</a></li>
+                <li><a href="#Variable">Variable</a></li>
+                <li><a href="#Constantes">Constantes</a></li>
+                <li><a href="#Entrer/Sortie">Entrer/Sortie</a></li>
+                <li><a href="#Sructure/boucle">Sructure/boucle</a></li>
+                <li><a href="#Fonction/procedure">Fonction/procedure</a></li>
+                <li><a href="#Tableau/Types">Tableau/Types</a></li>
+            </ul>
+            
+            <ul>
+                <li>:<a href="http://pascal.developpez.com/cours/ptrau/">site cours</a> avec plus de details;</li>
+                <li>:<a href="http://freepascal.org/">site de free pascal</a> pour telecharger le logiciel</li>
+            </ul>
+        </footer>
+
+    </body>
+</html>

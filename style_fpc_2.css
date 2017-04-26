@@ -1,0 +1,26 @@
+/*
+Theme name: Theme site ludus 1c
+Theme URI: Ludus1C.com
+Autor: maxime bazin
+Description: theme css site web fpc
+version: 1.0
+License: Ludus1c
+License URI: Ludus1c.com
+text Domain: ludus1c
+*/
+
+
+@media screen and (max-width: 1200px) {
+
+	body{
+		background: url("images/fond6.jpg")fixed;
+	}
+
+	p{
+		font-size: 9px;
+	}
+
+	#conteneur{
+		display: none;
+	}
+}
